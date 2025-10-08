@@ -23,15 +23,9 @@ private:
 
     // Constant arrays
     // Names list
-    inline static const string nameList[NAMES] = {
-        "Tiny", "Old", "Mature", "Senior", "Junior", "Baby", "Teen", "Elder",
-        "Boss", "Legend", "Godlike", "Goober", "Speedy", "Chunky", "Smarty"
-    };
+    static const string nameList[NAMES];
     // Colors list
-    inline static const string colorList[COLORS] = {
-        "White", "Black", "Brown", "Gray", "Gold", "Red", "Yellow", "Orange",
-        "Cream", "Mauve", "Silver", "Tan", "Beige", "Copper", "Ivory"
-    };
+    static const string colorList[COLORS];
 
 public:
     // Constructors
@@ -122,4 +116,14 @@ public:
         // Print in the format of name(color, age)
         cout << name << " (" << color << ", " << age << ")" << endl;
     }
+};
+
+// Declare the names list and colors list
+const string Goat::nameList[NAMES] = {
+    "Tiny", "Old", "Mature", "Senior", "Junior", "Baby", "Teen", "Elder",
+    "Boss", "Legend", "Godlike", "Goober", "Speedy", "Chunky", "Smarty"
+};
+const string Goat::colorList[COLORS] = {
+    "White", "Black", "Brown", "Gray", "Gold", "Red", "Yellow", "Orange",
+    "Cream", "Mauve", "Silver", "Tan", "Beige", "Copper", "Ivory"
 };

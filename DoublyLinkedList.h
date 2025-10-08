@@ -194,15 +194,19 @@ public:
     {
         Node *current = head;
 
-        if (!current)
+        if (!current)        // If the Linked list is empty
         {
+            // Display a message
+            cout << "List is empty!" << endl;
             return;
         }
 
+        // While the current node is not null
         while (current)
         {
-            current->goat.print();
-            current = current->next;
+            cout << "   ";                  // Format the console output
+            current->goat.print();          // Display the information of the Goat object
+            current = current->next;        // Move to the next node
         }
         cout << endl;
     }
@@ -217,15 +221,19 @@ public:
     {
         Node *current = tail;
 
-        if (!current)
+        if (!current)        // If the Linked list is empty
         {
+            // Display a message
+            cout << "List is empty!" << endl;
             return;
         }
 
+        // While the current node is not null
         while (current)
         {
-            current->goat.print();
-            current = current->prev;
+            cout << "   ";                  // Format the console output
+            current->goat.print();          // Display the information of the Goat object
+            current = current->prev;        // Move to the previous node
         }
         cout << endl;
     }
