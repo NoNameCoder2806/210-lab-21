@@ -15,8 +15,6 @@ const int SIZE = 3;
 const int MIN_GOAT = 5;
 const int MAX_GOAT = 20;
 
-// Function prototypes
-
 // Main function
 int main()
 {
@@ -36,11 +34,11 @@ int main()
         dll.push_back(g);      // Push the Goat object into the Linked list
     }
 
-    // Call print() and print_reverse()
+    // Print the Goat objects in the Linked list
+    cout << "Forward: " << endl;         // Forward
     dll.print();
+    cout << "Backward: " << endl;        // Backward
     dll.print_reverse();
 
     return 0;
 }
-
-// Function implementations

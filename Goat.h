@@ -120,6 +120,6 @@ public:
     void print() const
     {
         // Print in the format of name(color, age)
-        cout << name << " (" << color << ", " << age << ")";
+        cout << name << " (" << color << ", " << age << ")" << endl;
     }
 };
