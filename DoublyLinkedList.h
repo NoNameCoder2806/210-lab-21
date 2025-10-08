@@ -204,7 +204,7 @@ public:
         // While the current node is not null
         while (current)
         {
-            cout << "   ";                  // Format the console output
+            cout << "\t";                   // Format the console output
             current->goat.print();          // Display the information of the Goat object
             current = current->next;        // Move to the next node
         }
@@ -231,7 +231,7 @@ public:
         // While the current node is not null
         while (current)
         {
-            cout << "   ";                  // Format the console output
+            cout << "\t";                   // Format the console output
             current->goat.print();          // Display the information of the Goat object
             current = current->prev;        // Move to the previous node
         }
