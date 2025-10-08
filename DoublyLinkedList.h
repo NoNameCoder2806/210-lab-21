@@ -3,6 +3,8 @@
 
 // Libraries
 #include <iostream>
+#include <string>
+#include "Goat.h"
 using namespace std;
 
 // Constants
@@ -18,14 +20,16 @@ private:
     // Node struct
     struct Node
     {
-        int data;
-        Node *prev;
-        Node *next;
-        Node(int val, Node *p = nullptr, Node *n = nullptr)
+        Goat goat;         // Goat object
+        Node *prev;        // Pointer to the previous node
+        Node *next;        // Pointer to the next node
+
+        // Default constructor for the Node struct
+        Node(Goat g, Node *p = nullptr, Node *n = nullptr)
         {
-            data = val;
-            prev = p;
-            next = n;
+            goat = g;        // Copy all the data from g
+            prev = p;        // Set the previous pointer to null
+            next = n;        // Set the next pointer to null
         }
     };
 
@@ -59,12 +63,17 @@ public:
             - value: an integer representing the value to insert
         Return: none
     */
-    void push_back(int value)
+    void push_back(const Goat& g)
     {
-        Node *newNode = new Node(value);
-        if (!tail) // if there's no tail, the list is empty
+        // Create a new node and pass the Goat object in
+        Node *newNode = new Node(g);
+
+        // If there's no tail, the list is empty
+        if (!tail)
+        {
             head = tail = newNode;
-        else
+        }
+        else        // If the list is not empty
         {
             tail->next = newNode;
             newNode->prev = tail;
@@ -79,12 +88,17 @@ public:
             - value: an integer representing the value to insert
         Return: none
     */
-    void push_front(int value)
+    void push_front(const Goat& g)
     {
-        Node *newNode = new Node(value);
-        if (!head) // if there's no head, the list is empty
+        // Create a new node and pass the Goat object in
+        Node *newNode = new Node(g);
+
+        // If there's no head, the list is empty
+        if (!head)
+        {
             head = tail = newNode;
-        else
+        }
+        else        // If the list is not empty
         {
             newNode->next = head;
             head->prev = newNode;
