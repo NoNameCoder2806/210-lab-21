@@ -20,12 +20,75 @@ private:
     string color;        // The color of the Goat object
 
     // Constant arrays
-    // Names
-    const string nameList[NAMES] = {"Tiny", "Old", "Mature", "Senior", "Junior", "Baby", "Teen", "Elder",
-                                    "Boss", "Legend", "Godlike", "Goober", "Speedy", "Chunky", "Smarty"};
-    // Colors
-    const string colorList[COLORS] = {"White", "Black", "Brown", "Gray", "Gold", "Red", "Yellow", "Orange",
-                                    "Cream", "Mauve", "Silver", "Tan", "Beige", "Copper", "Ivory"};
+    // Names list
+    inline static const string nameList[NAMES] = {
+        "Tiny", "Old", "Mature", "Senior", "Junior", "Baby", "Teen", "Elder",
+        "Boss", "Legend", "Godlike", "Goober", "Speedy", "Chunky", "Smarty"
+    };
+    // Colors list
+    inline static const string colorList[COLORS] = {
+        "White", "Black", "Brown", "Gray", "Gold", "Red", "Yellow", "Orange",
+        "Cream", "Mauve", "Silver", "Tan", "Beige", "Copper", "Ivory"
+    };
 
 public:
+    // Constructors
+    Goat()                                 // Default constructor
+    {
+        age = rand() % MAX_AGE + 1;                // Randomly picked an age for the Goat
+        name = nameList[rand() % NAMES];           // Randomly picked a name for the Goat
+        color = colorList[rand() % COLORS];        // Randomly picked a color for the Goat
+    }
+
+    Goat(int a, string n, string c)        // Parameter constructor
+    {
+        age = a;
+        name = n;
+        color = c;
+    }
+
+    // Accessors / Getters
+    int getAge() const
+    {
+        return age;
+    }
+
+    string getName() const
+    {
+        return name;
+    }
+
+    string getColor() const
+    {
+        return color;
+    }
+
+    // Mutators / Setters
+    void setAge(int a)
+    {
+        age = a;
+    }
+
+    void setName(string n)
+    {
+        name = n;
+    }
+
+    void setColor(string c)
+    {
+        color = c;
+    }
+
+    // Member functions
+    /*
+        print()
+        Prints the information of the Goat object
+        Arguments: none
+        Return: none
+    */
+    void print() const
+    {
+        // Print in the format of name(color, age)
+        cout << name << " (" << color << ", " << age << ")";
+    }
 };
