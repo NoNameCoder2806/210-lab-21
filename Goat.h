@@ -91,4 +91,32 @@ public:
         // Print in the format of name(color, age)
         cout << name << " (" << color << ", " << age << ")";
     }
+
+    /*
+        operator==()
+        Compares this Goat object with another Goat object to check for equality.
+        Arguments:
+            - g: a reference to another Goat object
+        Return:
+            - true if both Goats have the same age, name, and color
+            - false otherwise
+    */
+    bool operator==(const Goat& g) const
+    {
+        return age == g.getAge() && name == g.getName() && color == g.getColor();
+    }
+
+    /*
+    operator!=()
+    Compares this Goat object with another Goat object for inequality.
+    Arguments:
+        - g: a reference to another Goat object
+    Return:
+        - true if any of the data members (age, name, color) differ
+        - false if all data members are the same
+    */
+    bool operator!=(const Goat& g) const
+    {
+        return !(*this == g);
+    }
 };

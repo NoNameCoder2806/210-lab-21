@@ -115,14 +115,14 @@ public:
         Return: none
         Note: If position exceeds list size, insertion will fail with a message.
     */
-    void insert_after(int value, int position)
+    void insert_after(const Goat& g, int position)
     {
         if (position < 0)
         {
             cout << "Position must be >= 0." << endl;
             return;
         }
-        Node *newNode = new Node(value);
+        Node *newNode = new Node(g);
         if (!head)
         {
             head = tail = newNode;
@@ -154,12 +154,12 @@ public:
         Return: none
         Note: If the value is not found, no deletion occurs.
     */
-    void delete_node(int value)
+    void delete_node(const Goat& g)
     {
         if (!head)
             return; // Empty list
         Node *temp = head;
-        while (temp && temp->data != value)
+        while (temp && temp->goat != g)
             temp = temp->next;
         if (!temp)
             return; // Value not found
@@ -191,11 +191,15 @@ public:
     void print()
     {
         Node *current = head;
+
         if (!current)
+        {
             return;
+        }
+
         while (current)
         {
-            cout << current->data << " ";
+            current->goat.print();
             current = current->next;
         }
         cout << endl;
@@ -210,11 +214,15 @@ public:
     void print_reverse()
     {
         Node *current = tail;
+
         if (!current)
+        {
             return;
+        }
+
         while (current)
         {
-            cout << current->data << " ";
+            current->goat.print();
             current = current->prev;
         }
         cout << endl;

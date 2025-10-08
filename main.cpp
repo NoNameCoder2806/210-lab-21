@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include <iomanip>
 #include <ctime>
+#include "Goat.h"
+#include "DoublyLinkedList.h"
 using namespace std;
 
 // Constants
@@ -16,6 +18,9 @@ const int SIZE = 3;
 // Main function
 int main()
 {
+    // Call srand()
+    srand(time(0));
+
     cout << "Hello World" << endl;
 
     return 0;
