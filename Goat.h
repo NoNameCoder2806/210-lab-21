@@ -1,6 +1,8 @@
 // COMSC-210 | Lab 21 | Dat Hoang Vien
 // IDE used: Visual Studio Code
 
+#pragma once
+
 // Libraries
 #include <iostream>
 #include <string>
@@ -79,19 +81,7 @@ public:
         color = c;
     }
 
-    // Member functions
-    /*
-        print()
-        Prints the information of the Goat object
-        Arguments: none
-        Return: none
-    */
-    void print() const
-    {
-        // Print in the format of name(color, age)
-        cout << name << " (" << color << ", " << age << ")";
-    }
-
+    // Operators
     /*
         operator==()
         Compares this Goat object with another Goat object to check for equality.
@@ -118,5 +108,18 @@ public:
     bool operator!=(const Goat& g) const
     {
         return !(*this == g);
+    }
+
+    // Member functions
+    /*
+        print()
+        Prints the information of the Goat object
+        Arguments: none
+        Return: none
+    */
+    void print() const
+    {
+        // Print in the format of name(color, age)
+        cout << name << " (" << color << ", " << age << ")";
     }
 };

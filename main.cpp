@@ -12,6 +12,8 @@ using namespace std;
 
 // Constants
 const int SIZE = 3;
+const int MIN_GOAT = 5;
+const int MAX_GOAT = 20;
 
 // Function prototypes
 
@@ -21,7 +23,22 @@ int main()
     // Call srand()
     srand(time(0));
 
-    cout << "Hello World" << endl;
+    // Create a DoublyLinkedList object
+    DoublyLinkedList dll;
+
+    // Declare an int to store the number of Goat objects
+    int count = rand() % (MAX_GOAT - MIN_GOAT + 1) + MIN_GOAT;
+
+    // Create the Goat objects
+    for (int i = 0; i < count; i++)
+    {
+        Goat g;                // Create a temporary Goat object
+        dll.push_back(g);      // Push the Goat object into the Linked list
+    }
+
+    // Call print() and print_reverse()
+    dll.print();
+    dll.print_reverse();
 
     return 0;
 }

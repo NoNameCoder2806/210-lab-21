@@ -1,6 +1,8 @@
 // COMSC-210 | Lab 21 | Dat Hoang Vien
 // IDE used: Visual Studio Code
 
+#pragma once
+
 // Libraries
 #include <iostream>
 #include <string>
